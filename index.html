@@ -27,7 +27,7 @@
 </head>
 
 <body>
-    <section class="hero is-dark is-fullheight" style="background-image:url(https://images.pexels.com/photos/547766/pexels-photo-547766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)">
+    <section class="hero is-dark is-fullheight" style="background-image:url(https://images.pexels.com/photos/547766/pexels-photo-547766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); height:100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
         <!-- Hero head: will stick at the top -->
         <div class="hero-head">
             <header class="navbar">
@@ -83,109 +83,14 @@
         <!-- Hero footer: will stick at the bottom -->
     </section>
 
-    <section class="hero is-dark is-fullheight">
-        <div class="hero-body" style="background-color:#48B7db">
-            <div class="container">
-                <p class="title"> Organizate Ahora </p>
-                <br>
-                <div class="columns">
-                    <div id="room_card" class="card column">
-                        <div class="card-image">
-                            <img id="img_room" src="https://bit.ly/2UroouA" alt="Room image">
-                        </div>
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-48x48">
-                                        <img id="profile" class="is-rounded" src="https://bit.ly/2VSVEwv"
-                                             alt="Profile image">
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <p class="title is-4 has-text-black">Juan Revueltas</p>
-                                    <p class="subtitle is-6 has-text-black">Álvaro Obregón, CDMX</p>
-                                </div>
-                            </div>
-
-                            <div class="content">
-                                Cuarto amueblado en colonia Altavista a 15 minutos del ITAM.
-                                Todos los servicios incluidos.
-                                <br><br>
-                                <time datetime="2019-1-1">Publicado: Enero 2019</time>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="room_card" class="card column">
-                        <div class="card-image">
-                            <img id="img_room" src="https://bit.ly/2V8BNfG" alt="Room image">
-                        </div>
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-48x48">
-                                        <img id="profile" class="is-rounded" src="https://bit.ly/2Dn0drD"
-                                             alt="Profile image">
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <p class="title is-4 has-text-black">Sofía Orozco</p>
-                                    <p class="subtitle is-6 has-text-black">Benito Juárez, CDMX</p>
-                                </div>
-                            </div>
-
-                            <div class="content">
-                                Cuarto amueblado en colonia del Valle Sur, cuenta con cajon de
-                                estacionamiento e internet de alta velociad, servicios incluidos.
-                                <br><br>
-                                <time datetime="2019-2-1">Publicado: Febrero 2019</time>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="map_hero" class="hero is-primary is-fullheight" style="background-color:#07779C">
-        <div class="hero-body">
-            <div id="map_container" class="container">
-                <p class="title">Cercanía con el ITAM </p>
-                <div class="columns">
-                    <div class="column">
-                        <ul class="is-size-3">
-                            <li>Llega caminando al ITAM</li>
-                            <li>Múltiples servicios en la zona: Lavanderías, Restaurantes, etc.</li>
-
-                        </ul>
-
-                    </div>
-                    <div class="column">
-                        <div id='map' class="border"></div>
-                        <script>
-                            mapboxgl.accessToken =
-                                'pk.eyJ1IjoiamFmNGsiLCJhIjoiY2pjM3JoYTY2MTVtaTJxczRvYzdndHMxaiJ9.vxWi3DCNu_dPTtMytbj0Og';
-                            var map = new mapboxgl.Map({
-                                container: 'map', // container id
-                                style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-                                center: [-99.199675, 19.344684], // starting position [lng, lat]
-                                zoom: 15 // starting zoom
-                            });
-                        </script>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="footer" class="footer">
+    <footer id="footer" class="footer" style="height:80px; padding-bottom:40px; padding-top:20px">
         <div id="cont" class="columns has-text-centered">
             <div class="column">
                 <ol>
-                    <h2 class="subtitle"><strong> AirbITAM ® 2019 </strong></h2>
+                    <h2 class="subtitle"><strong> ITAMizador ® 2019 </strong></h2>
                     <p>
-                        Plataforma que conecta arrendadores de cuartos y departamentos
-                        con estudiantes del ITAM.
+                        Calendario en linea que te permite organizar tus actividades y medir tu 
+						desempeño
                     </p>
                 </ol>
             </div>
@@ -193,38 +98,24 @@
                 <ol>
                     <h2 class="subtitle"><strong>Ayuda</strong></h2>
                     <p>Preguntas frecuentes</p>
-                    <p>Seguridad</p>
-                    <p>Requisitos</p>
-                    <p>Reglas de uso</p>
                     <p>Aviso de privacidad</p>
                 </ol>
             </div>
             <div class="column">
                 <h2 class="subtitle"><strong> Contacto </strong></h2>
-                <div id="icons">
-                    <span class="icon is-large">
-                        <a target="_blank" href="https://github.com/adsi-itam-2019/AirbITAM">
-                            <i class="fas fa-2x fab fa-facebook" style="color:#07779C"></i>
-                        </a>
-                    </span>
-                    <span class="icon is-large">
-                        <a target="_blank" href="https://github.com/adsi-itam-2019/AirbITAM">
-                            <i class="fas fa-2x fab fa-twitter" style="color:#07779C"></i>
-                        </a>
-                    </span>
-                    <span class="icon is-large">
-                        <a target="_blank" href="https://github.com/adsi-itam-2019/AirbITAM">
-                            <i class="fas fa-2x fab fa-github" style="color:#07779C"></i>
-                        </a>
-                    </span>
-                </div>
-                <br>
-                <span class="icon is-large">
-                    <a target="_blank" href="https://github.com/adsi-itam-2019/AirbITAM">
-                        <i class="fas fa-2x fa-envelope-open-text" style="color:#07779C"></i>
-                    </a>
-                </span>
-                <h4><strong>ayuda@airbITAM.com</strong></h4>
+				<div id="icons">
+					<span class="icon is-large">
+						<a target="_blank" href="https://github.com/SValdeca/ProyectoIng.Software">
+							<i class="fas fa-2x fab fa-github" style="color:#07779C"></i>
+						</a>
+					</span>
+					<span class="icon is-large">
+						<a target="_blank" href="https://github.com/SValdeca/ProyectoIng.Software">
+							<i class="fas fa-2x fa-envelope-open-text" style="color:#07779C"></i>
+						</a>
+					</span>
+				</div>
+                <h4><strong>contacto@ITAMizador.com</strong></h4>
             </div>
         </div>
     </footer>
