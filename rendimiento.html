@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/0.53.1/mapbox-gl.css">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+    <script type="text/javascript" src="script.js"></script>
+    <title>ITAMizador</title>
+    <script>
+        function activeModal(accion) {
+            var modal = document.getElementById(accion);
+            if (!modal.classList.contains("is-active")) {
+                modal.classList.add("is-active");
+            } else {
+                modal.classList.remove("is-active");
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+
+    <script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+		apiKey: "AIzaSyATpnpKYSj54Qr9_xnj7EIXzisDRQwNqqE",
+		authDomain: "itamizador-b7162.firebaseapp.com",
+		databaseURL: "https://itamizador-b7162.firebaseio.com",
+		projectId: "itamizador-b7162",
+		storageBucket: "itamizador-b7162.appspot.com",
+		messagingSenderId: "15268201564",
+		appId: "1:15268201564:web:054388bf9bd0a77dcc9299",
+		measurementId: "G-2D8B91NG2Y"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		firebase.analytics();
+    </script>
+
+
+
+
+
+
+    <section class="hero is-dark is-fullheight" style="background-image:url(https://images.pexels.com/photos/547766/pexels-photo-547766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); height:100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-foot" style="background-color: rgba(223, 223, 223, 0.5);">
+            <nav class="tabs is-boxed is-fullwidth is-size-5">
+                <div class="container">
+                    <ul>
+                        <li><strong><a href="rendimiento.html">Perfil</a></strong></li>
+                        <li><strong><a href="#footer">Cerrar Sesión</a></strong></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body">
+
+            
+
+        </div>
+
+        <!-- Hero footer: will stick at the bottom -->
+    </section>
+
+    <footer id="footer" class="footer" style="height:80px; padding-bottom:40px; padding-top:20px">
+        <div id="cont" class="columns has-text-centered">
+            <div class="column">
+                <ol>
+                    <h2 class="subtitle"><strong> ITAMizador ® 2019 </strong></h2>
+                    <p>
+                        Calendario en linea que te permite organizar tus actividades y medir tu
+                        desempeño
+                    </p>
+                </ol>
+            </div>
+            <div class="column">
+                <ol>
+                    <h2 class="subtitle"><strong>Ayuda</strong></h2>
+                    <p>Preguntas frecuentes</p>
+                    <p>Aviso de privacidad</p>
+                </ol>
+            </div>
+            <div class="column">
+                <h2 class="subtitle"><strong> Contacto </strong></h2>
+                <div id="icons">
+                    <span class="icon is-large">
+                        <a target="_blank" href="https://svaldeca.github.io/ProyectoIng.Software/">
+                            <i class="fas fa-2x fab fa-github" style="color:#07779C"></i>
+                        </a>
+                    </span>
+                    <span class="icon is-large">
+                        <a target="_blank" href="https://svaldeca.github.io/ProyectoIng.Software/">
+                            <i class="fas fa-2x fa-envelope-open-text" style="color:#07779C"></i>
+                        </a>
+                    </span>
+                </div>
+                <h4><strong>contacto@ITAMizador.com</strong></h4>
+            </div>
+        </div>
+    </footer>
+
+
+    
+
+            </section>
+
+            <footer class="modal-card-foot">
+                <button class="button is-link">Registrar</button>
+                <button class="button" onclick="activeModal('register')">Cancelar</button>
+            </footer>
+        </div>
+    </div>
+</body>
+
