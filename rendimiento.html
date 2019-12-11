@@ -56,115 +56,123 @@
 
 
 
-    <section class="hero is-dark is-fullheight" style="background-image:url(https://images.pexels.com/photos/547766/pexels-photo-547766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); height:100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+    <section class="hero is-dark is-fullheight" style="background-image:url(https://i.pinimg.com/236x/46/cd/90/46cd90f70e451d7de4eae6203f6855ab--bienvenidos-gif-internet.jpg); height:100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
         <!-- Hero head: will stick at the top -->
-        <div class="hero-foot" style="background-color: rgba(223, 223, 223, 0.5);">
+        <div class="hero-foot" style="background-color: rgba(118, 118, 118, 0.5);">
             <nav class="tabs is-boxed is-fullwidth is-size-5">
                 <div class="container">
                     <ul>
                         <li><strong><a href="home.html">Calendario</a></strong></li>
+                        <li><strong><a href="https://comunidad.itam.mx">Comunidad</a></strong></li>
+                        <li class="is-active"><strong><a href="rendimiento.html">Perfil</a></strong></li>
                         <li><strong><a href="index.html">Cerrar Sesión</a></strong></li>
                     </ul>
                 </div>
             </nav>
+
         </div>
 
         <!-- Hero content: will be in the middle -->
+
+            <!--<div class="box" style="height:885px;width:400px; margin-left:0px">
+                <figure class="image is-256x256">
+                    <img class="is-rounded" src="https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/downloads/buddyiconsconavatars/sanandreas_grovestreetfamily2_256x256.jpg">
+                </figure>
+                </br>
+                <div class="file">
+                    <label class="file-label">
+                        <input class="file-input" type="file" name="resume">
+                        <span class="file-cta" style="width:200px;margin-left:85px">
+                            <span class="file-icon">
+                                <i class="fas fa-image"></i>
+                            </span>
+                            <span class="file-label">
+                                Cambiar foto
+                            </span>
+                        </span>
+                    </label>
+                </div>
+                </br>
+                <progress class="progress is-warning" value="75" max="100">75%</progress>
+            </div>-->
+
+
         <div class="hero-body">
-            <canvas id="myChart" width="400" height="400"></canvas>
-            <script>
-                var ctx = document.getElementById('myChart').getContext('2d');
-                var myChart = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                        datasets: [{
-                            label: '# of Votes',
-                            data: [12, 19, 3, 5, 2, 3],
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true
-                                }
+            <div class="container">
+                <div class="columns">
+
+                        <div class="column">
+                            <figure class="image is-5by3">
+                                <img src="grafica1.jpg">
+                            </figure>
+                            <figure class="image is-128x128">
+                                <img src="https://bulma.io/images/placeholders/128x128.png">
+                            </figure>
+                        </div>
+
+
+                    <div class="column">
+                        <figure class="image is-128x128">
+                            <img src="https://bulma.io/images/placeholders/128x128.png">
+                        </figure>
+                        <figure class="image is-128x128">
+                            <img src="https://bulma.io/images/placeholders/128x128.png">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+
+                <canvas id="myChart" width="400" height="400"></canvas>
+                <script>
+                    var ctx = document.getElementById('myChart').getContext('2d');
+                    var myChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                            datasets: [{
+                                label: '# of Votes',
+                                data: [12, 19, 3, 5, 2, 3],
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)'
+                                ],
+                                borderColor: [
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)'
+                                ],
+                                borderWidth: 1
                             }]
+                        },
+                        options: {
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero: true
+                                    }
+                                }]
+                            }
                         }
-                    }
-                });
-            </script>
+                    });
+                </script>
 
 
-        </div>
+            </div>
 
         <!-- Hero footer: will stick at the bottom -->
     </section>
 
-    <footer id="footer" class="footer" style="height:80px; padding-bottom:40px; padding-top:20px">
-        <div id="cont" class="columns has-text-centered">
-            <div class="column">
-                <ol>
-                    <h2 class="subtitle"><strong> ITAMizador ® 2019 </strong></h2>
-                    <p>
-                        Calendario en linea que te permite organizar tus actividades y medir tu
-                        desempeño
-                    </p>
-                </ol>
-            </div>
-            <div class="column">
-                <ol>
-                    <h2 class="subtitle"><strong>Ayuda</strong></h2>
-                    <p>Preguntas frecuentes</p>
-                    <p>Aviso de privacidad</p>
-                </ol>
-            </div>
-            <div class="column">
-                <h2 class="subtitle"><strong> Contacto </strong></h2>
-                <div id="icons">
-                    <span class="icon is-large">
-                        <a target="_blank" href="https://svaldeca.github.io/ProyectoIng.Software/">
-                            <i class="fas fa-2x fab fa-github" style="color:#07779C"></i>
-                        </a>
-                    </span>
-                    <span class="icon is-large">
-                        <a target="_blank" href="https://svaldeca.github.io/ProyectoIng.Software/">
-                            <i class="fas fa-2x fa-envelope-open-text" style="color:#07779C"></i>
-                        </a>
-                    </span>
-                </div>
-                <h4><strong>contacto@ITAMizador.com</strong></h4>
-            </div>
-        </div>
-    </footer>
-
-
     
 
-            </section>
 
-            <footer class="modal-card-foot">
-                <button class="button is-link">Registrar</button>
-                <button class="button" onclick="activeModal('register')">Cancelar</button>
-            </footer>
-        </div>
-    </div>
+  
 </body>
-
+</html>

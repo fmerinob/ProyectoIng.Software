@@ -14,6 +14,13 @@
     <script type="text/javascript" src="script.js"></script>
     <script type="text/css" src="prueba.css">
     </script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script type="text/javascript" src="/node_modules/bulma-accordion/dist/js/bulma-accordion.min.js"></script>
     <title>Calendario</title>
     <script>
         function activeModal(accion) {
@@ -24,6 +31,78 @@
                 modal.classList.remove("is-active");
             }
         }
+
+        Highcharts.chart('container', {
+
+            chart: {
+                polar: true,
+                type: 'line'
+            },
+
+            accessibility: {
+                description: 'A spiderweb chart compares the allocated budget against actual spending within an organization. The spider chart has six spokes. Each spoke represents one of the 6 departments within the organization: sales, marketing, development, customer support, information technology and administration. The chart is interactive, and each data point is displayed upon hovering. The chart clearly shows that 4 of the 6 departments have overspent their budget with Marketing responsible for the greatest overspend of $20,000. The allocated budget and actual spending data points for each department are as follows: Sales. Budget equals $43,000; spending equals $50,000. Marketing. Budget equals $19,000; spending equals $39,000. Development. Budget equals $60,000; spending equals $42,000. Customer support. Budget equals $35,000; spending equals $31,000. Information technology. Budget equals $17,000; spending equals $26,000. Administration. Budget equals $10,000; spending equals $14,000.'
+            },
+
+            title: {
+                text: 'Budget vs spending',
+                x: -80
+            },
+
+            pane: {
+                size: '80%'
+            },
+
+            xAxis: {
+                categories: ['Ideas 3', 'Problemas 2', 'Meca', 'Customer Support',
+                    'Information Technology', 'Administration'],
+                tickmarkPlacement: 'on',
+                lineWidth: 0
+            },
+
+            yAxis: {
+                gridLineInterpolation: 'polygon',
+                lineWidth: 0,
+                min: 0
+            },
+
+            tooltip: {
+                shared: true,
+                pointFormat: '<span style="color:{series.color}">{series.name}: <b>${point.y:,.0f}</b><br/>'
+            },
+
+            legend: {
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+
+            series: [{
+                name: 'Allocated Budget',
+                data: [43000, 19000, 60000, 35000, 17000, 10000],
+                pointPlacement: 'on'
+            }, {
+                name: 'Actual Spending',
+                data: [50000, 39000, 42000, 31000, 26000, 14000],
+                pointPlacement: 'on'
+            }],
+
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            align: 'center',
+                            verticalAlign: 'bottom'
+                        },
+                        pane: {
+                            size: '70%'
+                        }
+                    }
+                }]
+            }
+
+        });
     </script>
 </head>
 
@@ -335,15 +414,54 @@
                 background-color: #ff3860;
                 color: #fff;
             }
+    #container {
+        min-width: 360px;
+        max-width: 600px;
+        height: 400px;
+        margin: 0 auto;
+    }
+
+    caption {
+        padding-bottom: 15px;
+        font-family: 'Verdana';
+        font-size: 1.2em;
+        color: #555;
+    }
+
+    table {
+        font-family: 'Verdana';
+        font-size: 12pt;
+        border-collapse: collapse;
+        border: 1px solid #EBEBEB;
+        margin: 10px auto;
+        text-align: center;
+        width: 100%;
+    }
+
+        table tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #FCF9F9;
+        }
+
+    th {
+        font-weight: 600;
+        padding: 10px;
+    }
 </style>
 
 <body>
-    <section class="hero is-warning is-fullheight" style="background-image:url(https://images.pexels.com/photos/3068581/pexels-photo-3068581.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); height:80%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+    <section class="hero is-dark is-fullheight" style="background-image:url(https://i.pinimg.com/236x/46/cd/90/46cd90f70e451d7de4eae6203f6855ab--bienvenidos-gif-internet.jpg); height:80%; background-position: center; background-repeat: no-repeat; background-size: cover;">
         <!-- Hero head: will stick at the top -->
-        <div class="hero-foot" style="background-color: rgba(223, 223, 223, 0.5);">
+
+        <div class="hero-foot" style="background-color: rgba(118, 118, 118, 0.5);">
             <nav class="tabs is-boxed is-fullwidth is-size-5">
                 <div class="container">
                     <ul>
+                        <li  class="is-active"><strong><a href="rendimiento.html">Calendario</a></strong></li>
+                        <li><strong><a href="rendimiento.html">Comunidad</a></strong></li>
                         <li><strong><a href="rendimiento.html">Perfil</a></strong></li>
                         <li><strong><a href="index.html">Cerrar Sesión</a></strong></li>
                     </ul>
@@ -354,114 +472,118 @@
         <div class="hero-body">
 
             <div class="column is-4" style="width:600px">
-                <div class="box">
-                    <div class="calendar">
-                        <div class="calendar-nav">
-                            <div class="calendar-nav-left">
-                                <button class="button is-black">
-                                    <i class="fa fa-chevron-left"></i>
-                                </button>
-                            </div>
-                            <div>Diciembre 2019</div>
-                            <div class="calendar-nav-right">
-                                <button class="button is-black">
-                                    <i class="fa fa-chevron-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="calendar-container">
-                            <div class="calendar-header">
-                                <div class="calendar-date">Sun</div>
-                                <div class="calendar-date">Mon</div>
-                                <div class="calendar-date">Tue</div>
-                                <div class="calendar-date">Wed</div>
-                                <div class="calendar-date">Thu</div>
-                                <div class="calendar-date">Fri</div>
-                                <div class="calendar-date">Sat</div>
-                            </div>
-                            <div class="calendar-body">
-                                <div class="calendar-date"><button class="date-item">1</button></div>
-                                <div class="calendar-date">
-                                    <button class="date-item">2</button>
-                                    <!--
-                                <div class="calendar-events">
-                                    <a class="calendar-event">Default event</a>
-                                </div>
-                                -->
-                                </div>
-                                <div class="calendar-date"><button class="date-item">3</button></div>
-                                <div class="calendar-date"><button class="date-item">4</button></div>
-                                <div class="calendar-date"><button class="date-item">5</button></div>
-                                <div class="calendar-date"><button class="date-item">6</button></div>
-                                <div class="calendar-date calendar-range range-start"><button class="date-item is-active">7</button></div>
-                                <div class="calendar-date calendar-range tooltip" data-tooltip="You have appointments">
-                                    <button class="date-item badge">8</button>
-                                </div>
-                                <div class="calendar-date calendar-range"><button class="date-item">9</button></div>
-                                <div class="calendar-date calendar-range"><button class="date-item">10</button></div>
-                                <div class="calendar-date calendar-range" tooltip" data-tooltip="Today"><button class="date-item date-today">11</button></div>
-                                <div class="calendar-date calendar-range">
-                                    <button class="date-item">12</button>
-                                </div>
-                                <div class="calendar-date calendar-range"><button class="date-item">13</button></div>
-                                <div class="calendar-date calendar-range"><button class="date-item">14</button></div>
-                                <div class="calendar-date calendar-range"><button class="date-item">15</button></div>
-                                <div class="calendar-date calendar-range"><button class="date-item">16</button></div>
-                                <div class="calendar-date calendar-range"><button class="date-item">17</button></div>
-                                <div class="calendar-date calendar-range"><button class="date-item">18</button></div>
-                                <div class="calendar-date calendar-range"><button class="date-item">19</button></div>
-                                <div class="calendar-date calendar-range range-end">
-                                    <button class="date-item is-active">20</button>
-                                </div>
-                                <div class="calendar-date"><button class="date-item">21</button></div>
-                                <div class="calendar-date"><button class="date-item">22</button></div>
-                                <div class="calendar-date"><button class="date-item">23</button></div>
-                                <div class="calendar-date"><button class="date-item">24</button></div>
-                                <div class="calendar-date"><button class="date-item">25</button></div>
-                                <div class="calendar-date"><button class="date-item">26</button></div>
-                                <div class="calendar-date"><button class="date-item">27</button></div>
-                                <div class="calendar-date"><button class="date-item">28</button></div>
-                                <div class="calendar-date"><button class="date-item">29</button></div>
-                                <div class="calendar-date"><button class="date-item">30</button></div>
-                                <div class="calendar-date"><button class="date-item">31</button></div>
-                                <div class="calendar-date disabled">
-                                    <button class="date-item">1</button>
-                                </div>
-                                <div class="calendar-date disabled">
-                                    <button class="date-item">2</button>
-                                </div>
-                                <div class="calendar-date disabled">
-                                    <button class="date-item">3</button>
-                                </div>
-                                <div class="calendar-date disabled">
-                                    <button class="date-item">4</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </br>
+
 
                 <div class="box">
-                    <button class="button is-warning" onclick="activeModal('a1')" style="width:520px">Actividad 1</button>
-                    </br>
-                    </br>
-                    <button class="button is-warning" onclick="activeModal('a2')" style="width:520px">Actividad 2</button>
-                    </br>
-                    </br>
-                    <button class="button is-warning" onclick="activeModal('a3')" style="width:520px">Actividad 3</button>
-                    </br>
-                    </br>
-                    <button class="button is-warning" onclick="activeModal('a4')" style="width:520px">Actividad 4</button>
-                    </br>
-                    </br>
-                    <button class="button is-warning" onclick="activeModal('a5')" style="width:520px">Actividad 5</button>
-                    </br>
-                    </br>
-                    <p class="modal-card-title">Progreso del dia de hoy</p>
-                    </br>
+                    <h1 class="title is-size-5" style="color:black">
+                        Proximas actividades
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="button is-warning is-active" onclick="activeModal('altaActividad')">Agregar</button>
 
-                    <progress class="progress is-warning" value="90" max="100">90%</progress>
+                    </h1>
+
+                    <section class="accordions">
+                        <div class="box">
+                            <article class="accordion is-active">
+
+                                <div class="accordion-header toggle">
+                                    <strong><p>Examen de Historia</p></strong>
+                                </div>
+                                <div class="accordion-body">
+                                    <div class="accordion-content">
+                                        <p>Descripcion: salon 202</p>
+                                        <p>Fecha: 08/12/2019</p>
+                                        <p>Hora Inicio: 10:00 am</p>
+                                        <p>
+                                            Hora Fin: 12:00 pm
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <button class="button is-warning is-light">Editar</button>
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="box">
+                            <article class="accordion">
+                                <div class="accordion-header">
+
+                                    <strong><p>Examen de Software</p></strong>
+
+                                </div>
+                                <div class="accordion-body">
+                                    <div class="accordion-content">
+                                        <p>Descripcion: salon SA-2</p>
+                                        <p>Fecha: 11/12/2019</p>
+                                        <p>Hora Inicio: 04:00 pm</p>
+                                        <p>
+                                            Hora Fin: 06:45 pm
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <button class="button is-warning is-light" onclick="activeModal('editaActividad')">Editar</button>
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="box">
+                            <article class="accordion">
+                                <div class="accordion-header">
+
+                                    <strong><p>Examen de Redes</p></strong>
+
+                                </div>
+                                <div class="accordion-body">
+                                    <div class="accordion-content">
+                                        <p>Descripcion: salon 402</p>
+                                        <p>Fecha: 12/12/2019</p>
+                                        <p>Hora Inicio: 01:00 pm</p>
+                                        <p>
+                                            Hora Fin: 03:45 pm
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <button class="button is-warning is-light">Editar</button>
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="box">
+                            <article class="accordion">
+                                <div class="accordion-header">
+
+                                    <strong><p>Torneo de natación</p></strong>
+
+                                </div>
+                                <div class="accordion-body">
+                                    <div class="accordion-content">
+                                        <p>Descripcion: Torneo invernal</p>
+                                        <p>Fecha: 17/12/2019</p>
+                                        <p>Hora Inicio: 08:00 am</p>
+                                        <p>
+                                            Hora Fin: 10:00 am
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <button class="button is-warning is-light">Editar</button>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                    </br>
+                    </br>
                 </div>
 
             </div>
@@ -476,7 +598,7 @@
                                         <i class="fa fa-chevron-left"></i>
                                     </button>
                                 </div>
-                                <div>December 2019</div>
+                                <div>Diciembre 2019</div>
                                 <div class="calendar-nav-right">
                                     <button class="button is-dark">
                                         <i class="fa fa-chevron-right"></i>
@@ -498,10 +620,10 @@
                                     <div class="calendar-date">
                                         <button class="date-item">2</button>
                                         <!--
-                                    <div class="calendar-events">
-                                        <a class="calendar-event">Default event</a>
-                                    </div>
-                                    -->
+                                        <div class="calendar-events">
+                                            <a class="calendar-event">Default event</a>
+                                        </div>
+                                        -->
                                     </div>
                                     <div class="calendar-date"><button class="date-item">3</button></div>
                                     <div class="calendar-date"><button class="date-item">4</button></div>
@@ -511,33 +633,59 @@
                                     <div class="calendar-date calendar-range tooltip" data-tooltip="You have appointments">
                                         <button class="date-item badge">8</button>
                                         <div class="calendar-events">
-                                            <a class="calendar-event is-primary" style="color:black">Primary event</a>
-                                            <a class="calendar-event is-warning" style="color:black">Warning event</a>
-                                            <a class="calendar-event is-danger" style="color:black">Danger event</a>
+                                            <a class="calendar-event is-danger" style="color:white">Examen Historia</a>
                                         </div>
                                     </div>
                                     <div class="calendar-date calendar-range"><button class="date-item">9</button></div>
                                     <div class="calendar-date calendar-range"><button class="date-item">10</button></div>
-                                    <div class="calendar-date calendar-range" tooltip" data-tooltip="Today"><button class="date-item date-today">11</button></div>
-                                    <div class="calendar-date calendar-range">
-                                        <button class="date-item">12</button>
-
+                                    <div class="calendar-date calendar-range tooltip" data-tooltip="You have appointments">
+                                        <button class="date-item badge">11</button>
+                                        <div class="calendar-events">
+                                            <a class="calendar-event is-danger" style="color:white">Examen Software</a>
+                                        </div>
+                                    </div>
+                                    <div class="calendar-date calendar-range tooltip" data-tooltip="You have appointments">
+                                        <button class="date-item badge">12</button>
+                                        <div class="calendar-events">
+                                            <a class="calendar-event is-danger" style="color:white">Examen Redes</a>
+                                        </div>
                                     </div>
                                     <div class="calendar-date calendar-range"><button class="date-item">13</button></div>
                                     <div class="calendar-date calendar-range"><button class="date-item">14</button></div>
                                     <div class="calendar-date calendar-range"><button class="date-item">15</button></div>
                                     <div class="calendar-date calendar-range"><button class="date-item">16</button></div>
-                                    <div class="calendar-date calendar-range"><button class="date-item">17</button></div>
+                                    <div class="calendar-date calendar-range tooltip" data-tooltip="You have appointments">
+                                        <button class="date-item badge">17</button>
+                                        <div class="calendar-events">
+                                            <a class="calendar-event is-info" style="color:white">Torneo de natación</a>
+                                        </div>
+                                    </div>
                                     <div class="calendar-date calendar-range"><button class="date-item">18</button></div>
                                     <div class="calendar-date calendar-range"><button class="date-item">19</button></div>
                                     <div class="calendar-date calendar-range range-end">
                                         <button class="date-item is-active">20</button>
+                                        <div class="calendar-events">
+                                            <a class="calendar-event is-primary" style="color:white">Desayuno Maestria</a>
+
+                                            <a class="calendar-event is-warning"  onclick="activeModal('verActividad')" style="color:white">Graduacion</a>
+                                        </div>
+
                                     </div>
-                                    <div class="calendar-date"><button class="date-item">21</button></div>
+                                    <div class="calendar-date tooltip" data-tooltip="You have appointments">
+                                        <button class="date-item badge">21</button>
+                                        <div class="calendar-events">
+                                            <a class="calendar-event is-primary" style="color:white">Cena Prepa</a>
+                                        </div>
+                                    </div>
                                     <div class="calendar-date"><button class="date-item">22</button></div>
                                     <div class="calendar-date"><button class="date-item">23</button></div>
                                     <div class="calendar-date"><button class="date-item">24</button></div>
-                                    <div class="calendar-date"><button class="date-item">25</button></div>
+                                    <div class="calendar-date tooltip" data-tooltip="You have appointments">
+                                        <button class="date-item badge">25</button>
+                                        <div class="calendar-events">
+                                            <a class="calendar-event is-success" style="color:white">Navidad</a>
+                                        </div>
+                                    </div>
                                     <div class="calendar-date"><button class="date-item">26</button></div>
                                     <div class="calendar-date"><button class="date-item">27</button></div>
                                     <div class="calendar-date"><button class="date-item">28</button></div>
@@ -568,53 +716,197 @@
         <!-- Hero footer: will stick at the bottom -->
     </section>
 
-    <div class="modal" id="a1">
+    <div class="modal" id="altaActividad">
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title">Modal title</p>
-                <button class="delete" aria-label="close"onclick="activeModal('a1')"></button>
+                <p class="modal-card-title">Nueva Actividad</p>
+                <button class="delete" aria-label="close" onclick="activeModal('altaActividad')"></button>
             </header>
             <section class="modal-card-body">
                 <!-- Content ... -->
+
+                <div class="field">
+                    <label class="label">Nombre</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Text input">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Descripcion</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Text input">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Hora Inicio</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Text input">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Hora Fin</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Text input">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Categoria</label>
+
+                </div>
+                <div class="field">
+                    <input class="is-checkradio is-success" id="exampleRadioSuccess" type="radio" name="exampleRadioSuccess">
+                    <label for="exampleRadioSuccess">Escolar</label>
+                </div>
+
+                <div class="field">
+                    <input class="is-checkradio is-warning" id="exampleRadioWarning" type="radio" name="exampleRadioWarning">
+                    <label for="exampleRadioWarning">Extracurricular</label>
+                </div>
+
+                <div class="field">
+                    <input class="is-checkradio is-danger" id="exampleRadioDanger" type="radio" name="exampleRadioDanger">
+                    <label for="exampleRadioDanger">Evento especial</label>
+                </div>
+
+                <div class="field">
+                    <input class="is-checkradio is-info" id="exampleRadioInfo" type="radio" name="exampleRadioInfo">
+                    <label for="exampleRadioInfo">Evento casual</label>
+                </div>
+
             </section>
             <footer class="modal-card-foot">
-                <button class="button is-success">Save changes</button>
-                <button class="button" onclick="activeModal('a1')">Cancelar</button>
+                <button class="button is-success">Agregar</button>
+                <button class="button" onclick="activeModal('altaActividad')">Cancelar</button>
             </footer>
         </div>
     </div>
 
-    <div class="modal" id="a2">
+    <div class="modal" id="editaActividad">
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title">Modal title</p>
-                <button class="delete" aria-label="close" onclick="activeModal('a2')"></button>
+                <p class="modal-card-title">Edita Actividad</p>
+                <button class="delete" aria-label="close" onclick="activeModal('editaActividad')"></button>
             </header>
             <section class="modal-card-body">
                 <!-- Content ... -->
+
+                <div class="field">
+                    <label class="label">Nombre</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Examen de Software">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Descripcion</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="salon SA-2">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Fecha</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="11/12/2019">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Hora Inicio</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="04:00 pm">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Hora Fin</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="06:45 pm">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Categoria</label>
+
+                </div>
+                <div class="field">
+                    <input class="is-checkradio is-success" id="exampleRadioSuccess" type="radio" name="exampleRadioSuccess">
+                    <label for="exampleRadioSuccess">Escolar</label>
+                </div>
+
+                <div class="field">
+                    <input class="is-checkradio is-warning" id="exampleRadioWarning" type="radio" name="exampleRadioWarning">
+                    <label for="exampleRadioWarning">Extracurricular</label>
+                </div>
+
+                <div class="field">
+                    <input class="is-checkradio is-danger" id="exampleRadioDanger" type="radio" name="exampleRadioDanger">
+                    <label for="exampleRadioDanger">Evento especial</label>
+                </div>
+
+                <div class="field">
+                    <input class="is-checkradio is-info" id="exampleRadioInfo" type="radio" name="exampleRadioInfo">
+                    <label for="exampleRadioInfo">Evento casual</label>
+                </div>
+
             </section>
             <footer class="modal-card-foot">
-                <button class="button is-success">Save changes</button>
-                <button class="button"onclick="activeModal('a2')">Cancel</button>
+                <button class="button is-success">Guardar Cambios</button>
+                <button class="button" onclick="activeModal('editaActividad')">Cancelar</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="button is-danger" onclick="activeModal('editaActividad')">Eliminar</button>
             </footer>
         </div>
     </div>
 
-    <div class="modal" id="a3">
+
+    <div class="modal" id="verActividad">
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title" >Modal title</p>
-                <button class="delete" aria-label="close" onclick="activeModal('a3')"></button>
+                <p class="modal-card-title">Graduacion</p>
+                <button class="delete" aria-label="close" onclick="activeModal('verActividad')"></button>
             </header>
             <section class="modal-card-body">
                 <!-- Content ... -->
+
+
+                <div class="field">
+                    <label class="label">Descripcion</label>
+                    <div class="control">
+                        <p>Generacion 2019</p>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Fecha</label>
+                    <div class="control">
+                        <p>20/12/2019</p>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Hora Inicio</label>
+                    <div class="control">
+                        <p>08:00pm</p>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Hora Fin</label>
+                    <div class="control">
+                        <p>11:00pm</p>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Categoria</label>
+
+                </div>
+                <div class="field">
+                    <p>Evento especial</p>
+                </div>
+
             </section>
             <footer class="modal-card-foot">
-                <button class="button is-success">Save changes</button>
-                <button class="button" onclick="activeModal('a3')">Cancel</button>
+                <button class="button is-success" onclick="activeModal('verActividad')">Editar</button>
+                <button class="button" onclick="activeModal('verActividad')">Salir</button>
             </footer>
         </div>
     </div>
@@ -623,7 +915,7 @@
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title" >Modal title</p>
+                <p class="modal-card-title">Modal title</p>
                 <button class="delete" aria-label="close" onclick="activeModal('a4')"></button>
             </header>
             <section class="modal-card-body">
@@ -640,7 +932,7 @@
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title" >Modal title</p>
+                <p class="modal-card-title">Modal title</p>
                 <button class="delete" aria-label="close" onclick="activeModal('a5')"></button>
             </header>
             <section class="modal-card-body">
