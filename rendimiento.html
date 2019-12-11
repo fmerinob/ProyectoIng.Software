@@ -35,20 +35,20 @@
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
 
     <script>
-		// Your web app's Firebase configuration
-		var firebaseConfig = {
-		apiKey: "AIzaSyATpnpKYSj54Qr9_xnj7EIXzisDRQwNqqE",
-		authDomain: "itamizador-b7162.firebaseapp.com",
-		databaseURL: "https://itamizador-b7162.firebaseio.com",
-		projectId: "itamizador-b7162",
-		storageBucket: "itamizador-b7162.appspot.com",
-		messagingSenderId: "15268201564",
-		appId: "1:15268201564:web:054388bf9bd0a77dcc9299",
-		measurementId: "G-2D8B91NG2Y"
-		};
-		// Initialize Firebase
-		firebase.initializeApp(firebaseConfig);
-		firebase.analytics();
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyATpnpKYSj54Qr9_xnj7EIXzisDRQwNqqE",
+            authDomain: "itamizador-b7162.firebaseapp.com",
+            databaseURL: "https://itamizador-b7162.firebaseio.com",
+            projectId: "itamizador-b7162",
+            storageBucket: "itamizador-b7162.appspot.com",
+            messagingSenderId: "15268201564",
+            appId: "1:15268201564:web:054388bf9bd0a77dcc9299",
+            measurementId: "G-2D8B91NG2Y"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
     </script>
 
 
@@ -64,7 +64,7 @@
                     <ul>
                         <li><strong><a href="home.html">Calendario</a></strong></li>
                         <li><strong><a href="https://comunidad.itam.mx">Comunidad</a></strong></li>
-                        <li class="is-active"><strong><a href="rendimiento.html">Perfil</a></strong></li>
+                        <li class="is-active"><strong><a href="rendimiento.html">Desempeño</a></strong></li>
                         <li><strong><a href="index.html">Cerrar Sesión</a></strong></li>
                     </ul>
                 </div>
@@ -73,106 +73,94 @@
         </div>
 
         <!-- Hero content: will be in the middle -->
-
-            <!--<div class="box" style="height:885px;width:400px; margin-left:0px">
-                <figure class="image is-256x256">
-                    <img class="is-rounded" src="https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/downloads/buddyiconsconavatars/sanandreas_grovestreetfamily2_256x256.jpg">
-                </figure>
-                </br>
-                <div class="file">
-                    <label class="file-label">
-                        <input class="file-input" type="file" name="resume">
-                        <span class="file-cta" style="width:200px;margin-left:85px">
-                            <span class="file-icon">
-                                <i class="fas fa-image"></i>
-                            </span>
-                            <span class="file-label">
-                                Cambiar foto
-                            </span>
+        <!--<div class="box" style="height:885px;width:400px; margin-left:0px">
+            <figure class="image is-256x256">
+                <img class="is-rounded" src="https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/downloads/buddyiconsconavatars/sanandreas_grovestreetfamily2_256x256.jpg">
+            </figure>
+            </br>
+            <div class="file">
+                <label class="file-label">
+                    <input class="file-input" type="file" name="resume">
+                    <span class="file-cta" style="width:200px;margin-left:85px">
+                        <span class="file-icon">
+                            <i class="fas fa-image"></i>
                         </span>
-                    </label>
-                </div>
-                </br>
-                <progress class="progress is-warning" value="75" max="100">75%</progress>
-            </div>-->
+                        <span class="file-label">
+                            Cambiar foto
+                        </span>
+                    </span>
+                </label>
+            </div>
+            </br>
+            <progress class="progress is-warning" value="75" max="100">75%</progress>
+        </div>-->
 
 
         <div class="hero-body">
             <div class="container">
                 <div class="columns">
 
-                        <div class="column">
+
+                    <div class="column">
+                        <div class="box">
                             <figure class="image is-5by3">
                                 <img src="grafica1.jpg">
                             </figure>
-                            <figure class="image is-128x128">
-                                <img src="https://bulma.io/images/placeholders/128x128.png">
+                        </div>
+                        </br>
+                        <div class="box">
+                            <figure class="image is-5by3">
+                                <img src="grafica2.jpg">
                             </figure>
                         </div>
+                    </div>
 
 
                     <div class="column">
-                        <figure class="image is-128x128">
-                            <img src="https://bulma.io/images/placeholders/128x128.png">
-                        </figure>
-                        <figure class="image is-128x128">
-                            <img src="https://bulma.io/images/placeholders/128x128.png">
-                        </figure>
+                        <div class="box">
+                            <figure class="image is-5by3">
+                                <img src="grafica3.jpg">
+                            </figure>
+                        </div>
+                        </br>
+                        <div class="box">
+                            <figure class="image is-5by3">
+                                <img src="grafica4.jpg">
+                            </figure>
+                        </div>
                     </div>
+
                 </div>
-            </div>
-
-
-                <canvas id="myChart" width="400" height="400"></canvas>
-                <script>
-                    var ctx = document.getElementById('myChart').getContext('2d');
-                    var myChart = new Chart(ctx, {
-                        type: 'bar',
-                        data: {
-                            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                            datasets: [{
-                                label: '# of Votes',
-                                data: [12, 19, 3, 5, 2, 3],
-                                backgroundColor: [
-                                    'rgba(255, 99, 132, 0.2)',
-                                    'rgba(54, 162, 235, 0.2)',
-                                    'rgba(255, 206, 86, 0.2)',
-                                    'rgba(75, 192, 192, 0.2)',
-                                    'rgba(153, 102, 255, 0.2)',
-                                    'rgba(255, 159, 64, 0.2)'
-                                ],
-                                borderColor: [
-                                    'rgba(255, 99, 132, 1)',
-                                    'rgba(54, 162, 235, 1)',
-                                    'rgba(255, 206, 86, 1)',
-                                    'rgba(75, 192, 192, 1)',
-                                    'rgba(153, 102, 255, 1)',
-                                    'rgba(255, 159, 64, 1)'
-                                ],
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            scales: {
-                                yAxes: [{
-                                    ticks: {
-                                        beginAtZero: true
-                                    }
-                                }]
-                            }
-                        }
-                    });
-                </script>
-
 
             </div>
+
+
+        </div>
 
         <!-- Hero footer: will stick at the bottom -->
     </section>
+    <footer id="footer" class="footer is-dark" style="height:80px; padding-bottom:40px; padding-top:20px;background-color:white">
+        <div id="cont" class="columns has-text-centered">
+            <div class="column">
+                <ol>
+                    </br>
+                    <h2 class="subtitle"><strong> Consejo de la semana </strong></h2>
+                    <p>
+                        Dedica menos tiempo a Historia e invierte mas horas a Redes y tu rendimiento mejorara un 30%
+                    </p>
+                </ol>
+            </div>
 
-    
+                    <figure class="image"  >
+                        <img src="Rendimiento.jpg">
+                    </figure>
+
+        </div>
+    </footer>
 
 
-  
+
+
+
 </body>
 </html>
