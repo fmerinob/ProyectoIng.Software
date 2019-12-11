@@ -22,7 +22,7 @@ function edita() {
 	var titulo = document.getElementById("titulo_soft");
 	var caja = document.getElementById("caja_soft");
 	titulo.innerText = texto.value;
-	//caja.innerHTML = '<a class="calendar-event is-danger" style="color:white" >' + texto.value + '</a>';
+	caja.innerHTML = '<a class="calendar-event is-danger" style="color:white" >' + texto.value + '</a>';
 
 	activeModal('editaActividad');
 }
