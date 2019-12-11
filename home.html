@@ -460,7 +460,7 @@
             <nav class="tabs is-boxed is-fullwidth is-size-5">
                 <div class="container">
                     <ul>
-                        <li  class="is-active"><strong><a href="rendimiento.html">Calendario</a></strong></li>
+                        <li class="is-active"><strong><a href="rendimiento.html">Calendario</a></strong></li>
                         <li><strong><a href="https://comunidad.itam.mx">Comunidad</a></strong></li>
                         <li><strong><a href="rendimiento.html">Desempeño</a></strong></li>
                         <li><strong><a href="index.html">Cerrar Sesión</a></strong></li>
@@ -667,7 +667,7 @@
                                         <div class="calendar-events">
                                             <a class="calendar-event is-primary" style="color:white">Desayuno Maestria</a>
 
-                                            <a class="calendar-event is-warning"  onclick="activeModal('verActividad')" style="color:white">Graduacion</a>
+                                            <a class="calendar-event is-warning" onclick="activeModal('verActividad')" style="color:white">Graduacion</a>
                                         </div>
 
                                     </div>
@@ -905,25 +905,85 @@
 
             </section>
             <footer class="modal-card-foot">
-                <button class="button is-success" onclick="activeModal('verActividad')">Editar</button>
+                <button class="button is-success" onclick="activeModal('editaActividad2')">Editar</button>
                 <button class="button" onclick="activeModal('verActividad')">Salir</button>
             </footer>
         </div>
     </div>
 
-    <div class="modal" id="a4">
+    <div class="modal" id="editaActividad2">
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title">Modal title</p>
-                <button class="delete" aria-label="close" onclick="activeModal('a4')"></button>
+                <p class="modal-card-title">Edita Actividad</p>
+                <button class="delete" aria-label="close" onclick="activeModal('editaActividad2')"></button>
             </header>
             <section class="modal-card-body">
                 <!-- Content ... -->
+
+                <div class="field">
+                    <label class="label">Nombre</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Graduacion">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Descripcion</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Generacion 2019">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Fecha</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="20/12/2019">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Hora Inicio</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="08:00pm">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Hora Fin</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="11:00pm">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Categoria</label>
+
+                </div>
+                <div class="field">
+                    <input class="is-checkradio is-success" id="exampleRadioSuccess" type="radio" name="exampleRadioSuccess">
+                    <label for="exampleRadioSuccess">Escolar</label>
+                </div>
+
+                <div class="field">
+                    <input class="is-checkradio is-warning" id="exampleRadioWarning" type="radio" name="exampleRadioWarning">
+                    <label for="exampleRadioWarning">Extracurricular</label>
+                </div>
+
+                <div class="field">
+                    <input class="is-checkradio is-danger" id="exampleRadioDanger" type="radio" name="exampleRadioDanger">
+                    <label for="exampleRadioDanger">Evento especial</label>
+                </div>
+
+                <div class="field">
+                    <input class="is-checkradio is-info" id="exampleRadioInfo" type="radio" name="exampleRadioInfo">
+                    <label for="exampleRadioInfo">Evento casual</label>
+                </div>
+
             </section>
             <footer class="modal-card-foot">
-                <button class="button is-success">Save changes</button>
-                <button class="button" onclick="activeModal('a4')">Cancel</button>
+                <button class="button is-success">Guardar Cambios</button>
+                <button class="button" onclick="activeModal('editaActividad2')">Cancelar</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="button is-danger" onclick="activeModal('editaActividad2')">Eliminar</button>
             </footer>
         </div>
     </div>
