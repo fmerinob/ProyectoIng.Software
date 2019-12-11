@@ -1,71 +1,40 @@
 function activeModal(accion) {
-    var modal = document.getElementById(accion);
-    if (!modal.classList.contains("is-active")) {
-        modal.classList.add("is-active");
-    } else {
-        modal.classList.remove("is-active");
-    }
+	var modal = document.getElementById(accion);
+	if (!modal.classList.contains("is-active")) {
+		modal.classList.add("is-active");
+	} else {
+		modal.classList.remove("is-active");
+	}
 }
 
-function login(){
-    var email = document.getElementById("email");
-    if (email.value === "estudiante@itam.mx"){
-        document.location.href = "index_sesion.html";
-    } else if (email.value === "arrendador@gmail.com"){
-        document.location.href = "perfil_arrendador.html";
-    }
+function login() {
+	var email = document.getElementById("email");
+	if (email.value === "user@gmail.com") {
+		document.location.href = "home.html";
+	} else {
+		document.location.href = "index.html";
+	}
 
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Get all "navbar-burger" elements
-    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-    // Check if there are any navbar burgers
-    if ($navbarBurgers.length > 0) {
-        // Add a click event on each of them
-        $navbarBurgers.forEach(el => {
-            el.addEventListener('click', () => {
-                // Get the target from the "data-target" attribute
-                const target = el.dataset.target;
-                const $target = document.getElementById(target);
-                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-                el.classList.toggle('is-active');
-                $target.classList.toggle('is-active');
-
-            });
-        });
-    }
-});
-
-var slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-    showSlides(slideIndex += n);
+function edita() {
+	var texto = document.getElementById("input_soft");
+	var titulo = document.getElementById("titulo_soft");
+	var caja = document.getElementById("caja_soft");
+	titulo.innerText = texto.value;
+	caja.innerText = texto.values;
+	caja.cla
+	activeModal('editaActividad');
 }
 
-// Thumbnail image controls
-function currentSlide(n) {
-    showSlides(slideIndex = n);
+function elimina() {
+	var caja = document.getElementById("caja_graduacion");
+	caja.remove();
+	activeModal('editaActividad2');
 }
 
-function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {
-        slideIndex = 1
-    }
-    if (n < 1) {
-        slideIndex = slides.length
-    }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
+function agrega() {
+	var fecha = document.getElementById("fin_ano");
+	fecha.innerHTML = '<button class="date-item" >31</button> <div class="calendar-events"><a class="calendar-event is-warning" onclick="activeModal(' + 'verActividad'+')" style="color:white" id="caja_ano_nuevo">Cena año nuevo</a></div >';
+	activeModal('altaActividad');
 }
