@@ -692,7 +692,9 @@
                                     <div class="calendar-date"><button class="date-item">28</button></div>
                                     <div class="calendar-date"><button class="date-item">29</button></div>
                                     <div class="calendar-date"><button class="date-item">30</button></div>
-                                    <div class="calendar-date"><button class="date-item">31</button></div>
+                                    <div class="calendar-date"id="fin_ano"><button class="date-item" >31</button>
+									
+									</div>
                                     <div class="calendar-date disabled">
                                         <button class="date-item">1</button>
                                     </div>
@@ -730,25 +732,25 @@
                 <div class="field">
                     <label class="label">Nombre</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="Text input">
+                        <input class="input" type="text" placeholder="Text input" id="alta_nom">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Descripcion</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="Text input">
+                        <input class="input" type="text" placeholder="Text input" id="alta_desc">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Hora Inicio</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="Text input">
+                        <input class="input" type="text" placeholder="Text input" id="alta_Ini">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Hora Fin</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="Text input">
+                        <input class="input" type="text" placeholder="Text input" id="alta_Fin">
                     </div>
                 </div>
                 <div class="field">
@@ -777,7 +779,7 @@
 
             </section>
             <footer class="modal-card-foot">
-                <button class="button is-success">Agregar</button>
+                <button class="button is-success" onclick="agrega()">Agregar</button>
                 <button class="button" onclick="activeModal('altaActividad')">Cancelar</button>
             </footer>
         </div>

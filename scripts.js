@@ -32,3 +32,9 @@ function elimina() {
 	caja.remove();
 	activeModal('editaActividad2');
 }
+
+function agrega() {
+	var fecha = document.getElementById("fin_ano");
+	fecha.innerHTML = '<button class="date-item" >31</button> <div class="calendar-events"><a class="calendar-event is-warning" onclick="activeModal(' + 'verActividad'+')" style="color:white" id="caja_ano_nuevo">Cena año nuevo</a></div >';
+	activeModal('altaActividad');
+}
