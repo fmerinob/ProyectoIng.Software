@@ -11,3 +11,5 @@ Para probar la añadidura de un evento, se utiliza la cena año nuevo el 31 de d
 
 La pestaña "Comunidad" envía a la pagina comunidad.itam.mx
 La pestaña "Desempeño" muestra las imagenes y graficas de desempeño
+
+Prototipo realizado en equipo en Noviembre 2019. 
